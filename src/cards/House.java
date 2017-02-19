@@ -3,8 +3,7 @@ package cards;
 import java.util.Scanner;
 
 public class House {
-	public static void main(String[] args) throws InterruptedException {
-
+	public void startGame() throws InterruptedException {
 		// Double wager;
 		Scanner kb = new Scanner(System.in);
 		Player player = new Player();
@@ -54,10 +53,10 @@ public class House {
 			System.out.println("Here come the cards.");
 			System.out.println("\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\");
 			Thread.sleep(3000);
-		}else{
+		} else {
 			System.out.println("Thanks for visiting Star City Casino.");
-		System.exit(66);}
-		
+			System.exit(66);
+		}
 
 		d.deal(player);
 		d.deal(dealer);
@@ -70,19 +69,17 @@ public class House {
 		showHand(dealer);
 		System.out.println("Total " + dealer.getPlayerHand().getValueOfHand());
 		System.out.println("*****************************");
-		if(player.getPlayerHand().getValueOfHand()==21 && dealer.getPlayerHand().getValueOfHand()!=21){
-			System.out.println("BlackJack"+ " " + player.getName() + " "+ "Wins!");
+		if (player.getPlayerHand().getValueOfHand() == 21 && dealer.getPlayerHand().getValueOfHand() != 21) {
+			System.out.println("BlackJack" + " " + player.getName() + " " + "Wins!");
 			keepGoing = false;
-		}
-		else if(player.getPlayerHand().getValueOfHand()!=21 && dealer.getPlayerHand().getValueOfHand()==21){
+		} else if (player.getPlayerHand().getValueOfHand() != 21 && dealer.getPlayerHand().getValueOfHand() == 21) {
 			System.out.println("BlackJack Dealer Wins!!");
 			keepGoing = false;
-		}
-		else if(player.getPlayerHand().getValueOfHand()==21 && dealer.getPlayerHand().getValueOfHand()==21){
+		} else if (player.getPlayerHand().getValueOfHand() == 21 && dealer.getPlayerHand().getValueOfHand() == 21) {
 			System.out.println("Push");
 			keepGoing = false;
 		}
-		
+
 		while (keepGoing) {
 
 			while (playerKeepGoing) {
@@ -98,8 +95,7 @@ public class House {
 					System.out.println("Total " + dealer.getPlayerHand().getValueOfHand());
 					if (player.getPlayerHand().getValueOfHand() <= 21) {
 						continue;
-					}
-					else {
+					} else {
 						System.out.println("You Busted! Dealer Wins.");
 						playerKeepGoing = false;
 						dealerKeepGoing = false;
@@ -119,8 +115,7 @@ public class House {
 					showHand(dealer);
 					System.out.println("Total " + dealer.getPlayerHand().getValueOfHand());
 					System.out.println("*****************************");
-				}
-				else if (dealer.getPlayerHand().getValueOfHand() > 21) {
+				} else if (dealer.getPlayerHand().getValueOfHand() > 21) {
 					System.out.println("Dealer BUST!");
 					System.exit(23);
 				} else {
@@ -151,4 +146,5 @@ public class House {
 			System.out.println(p.getName() + " " + c.getRank() + " " + c.getSuit());
 		}
 	}
+
 }
