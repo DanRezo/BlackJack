@@ -17,9 +17,9 @@ public class House {
 		boolean playerKeepGoing = true;
 		boolean dealerKeepGoing = true;
 
-		System.out.println("****************************^*");
-		System.out.println("***************************|Q|");
-		System.out.println("****************************v*");
+		System.out.println("******************************");
+		System.out.println("*\u2661\u2666*********************\u2667\u2660*");
+		System.out.println("******************************");
 		System.out.println("* Welcome to Star City Casino*");
 		System.out.println("******************************");
 		System.out.println("*Take a seat and enjoy a game*");
@@ -33,33 +33,31 @@ public class House {
 		System.out.println("******************************");
 		System.out.println("******************************");
 		System.out.println("******************************");
-		System.out.println("*^****************************");
-		System.out.println("|K|***************************");
-		System.out.println("*v****************************");
+		System.out.println("******************************");
+		System.out.println("*\u2664\u2663*********************\u2662\u2665*");
+		System.out.println("******************************");
 		String choice = kb.next();
 
-		System.out.println("Welcome. What is your name?");
-		String nm = kb.next();
 		if (choice.equalsIgnoreCase("y")) {
+			System.out.println("Welcome. What is your name?");
+			String nm = kb.next();
 			player.setName(nm);
 			System.out.println("Salutaions for the Semi-Circle.");
-			System.out.println("*********" + player.getName() + "*********");
+			System.out.println("     \u2662\u2663\u2661\u2660" + player.getName() + "\u2662\u2663\u2661\u2660");
 			Thread.sleep(1800);
 			System.out.println("Name of the game is BlackJack.");
 			Thread.sleep(1650);
-			System.out.println("Dealer hits on 16 and stays on 17.");
+			System.out.println("Dealer Hits on 16 and Stays on 17.");
 			Thread.sleep(1650);
 			System.out.println("Ready?");
 			Thread.sleep(1650);
 			System.out.println("Here come the cards.");
 			System.out.println("\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\");
 			Thread.sleep(3000);
-
-		}
-
-		else {
+		}else{
 			System.out.println("Thanks for visiting Star City Casino.");
-		}
+		System.exit(66);}
+		
 
 		d.deal(player);
 		d.deal(dealer);
@@ -73,7 +71,7 @@ public class House {
 		System.out.println("Total " + dealer.getPlayerHand().getValueOfHand());
 		System.out.println("*****************************");
 		if(player.getPlayerHand().getValueOfHand()==21 && dealer.getPlayerHand().getValueOfHand()!=21){
-			System.out.println("BlackJack" + player.getName() + "Wins");
+			System.out.println("BlackJack"+ " " + player.getName() + " "+ "Wins!");
 			keepGoing = false;
 		}
 		else if(player.getPlayerHand().getValueOfHand()!=21 && dealer.getPlayerHand().getValueOfHand()==21){
@@ -102,7 +100,7 @@ public class House {
 						continue;
 					}
 					else {
-						System.out.println("You busted! Dealer Wins.");
+						System.out.println("You Busted! Dealer Wins.");
 						playerKeepGoing = false;
 						dealerKeepGoing = false;
 					}
@@ -124,6 +122,7 @@ public class House {
 				}
 				else if (dealer.getPlayerHand().getValueOfHand() > 21) {
 					System.out.println("Dealer BUST!");
+					System.exit(23);
 				} else {
 					checkForWinner(player, dealer);
 					dealerKeepGoing = false;
