@@ -3,7 +3,6 @@ This Java program will simulate game of BlackJack.
 There are nine (9) classes that make up the program.
 StarCityCasino.java will run the game.
 
-
 ## Welcome to StarCity Casino.
 ###Please read the house rules.
 1. Welcome to StarCity Blackjack
