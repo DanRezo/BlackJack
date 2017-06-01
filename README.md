@@ -18,6 +18,7 @@ Deal two hands of cards one to a Dealer and another to a Player. Allow the playe
 User Story #4
 Implement the remaining rules of blackjack so you can determine a winner of each round.
 
+## Instructions
 #### Please read the house rules.
 1. Welcome to StarCity Blackjack
 2. Please enter your name so the Dealer can properly address you.
@@ -30,5 +31,33 @@ Implement the remaining rules of blackjack so you can determine a winner of each
 9. If Dealer's card total is greater than 21, Player busts.
 10. If Either Player or Dealer is dealt BlackJack(21) on initial deal, game ends.
 11. In the case of a tie, game is considered a "push".
+
+## Example
+```
+package cards;
+
+public class StarCityCasino {
+	public static void main(String[] args) throws InterruptedException {
+		House houseFloor = new House();
+		houseFloor.startGame();
+		
+	}
+}
+
+```
+```
+public static void showHand(Player p) {
+		for (Card c : p.getPlayerHand().getHand()) {
+			System.out.println(p.getName() + " " + c.getRank() + " " + c.getSuit());
+		}
+	}
+
+```
+
+
+## Reflection
+This week three project tested my ability to work with multiple classes and getting comfortable building classes in an Object Oriented manner. I was able to build classes whose fields are Objects,practice writing methods,use collection types to organize and manage dataand
+use conditionals to create game logic. I had a lot of fun with this project.
+
 
 
