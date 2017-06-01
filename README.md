@@ -45,6 +45,8 @@ public class StarCityCasino {
 }
 
 ```
+#### Breakdown
+This was the first projecte which I only called on a method to run the project.
 ```
 public static void showHand(Player p) {
 		for (Card c : p.getPlayerHand().getHand()) {
@@ -53,6 +55,8 @@ public static void showHand(Player p) {
 	}
 
 ```
+#### Breakdown
+Showing the player's hand was done by iterating over the cards in the hand and then printing our the name, rank and suit.
 
 
 ## Reflection
